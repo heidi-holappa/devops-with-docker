@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+
+    backend:
+      image: backend-project-image
+      ports:
+        - 3000:8080
+      container_name: backend
+    
+    frontend:
+      image: frontend-project-image
+      ports:
+        - 5000:5000 
+      container_name: frontend
+    

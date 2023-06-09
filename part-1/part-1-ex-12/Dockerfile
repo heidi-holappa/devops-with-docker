@@ -1,5 +1,5 @@
-# BUILD: docker build . -t example-front
-# RUN: docker run -p 3000:5000 example-front
+# BUILD: docker build . -t example-frontend
+# RUN: docker run -p 3000:5000 example-frontend
 
 FROM node:16
 

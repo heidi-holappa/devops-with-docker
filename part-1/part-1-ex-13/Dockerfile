@@ -1,5 +1,5 @@
-# BUILD: docker build . -t ex-backend
-# RUN: docker run -p 3000:8080 ex-backend
+# BUILD: docker build . -t example-backend
+# RUN: docker run -p 3000:8080 example-backend
 
 FROM golang:1.16
 

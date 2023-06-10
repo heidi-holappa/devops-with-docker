@@ -8,13 +8,16 @@ services:
       environment:
         - REDIS_HOST=redis
       ports:
-        - "- 3000:8080"
+        - 8080:8080
       container_name: backend
     
     frontend:
       build: ./frontend/
       image: frontend-project-image
       ports:
-        - "5000:5000"
+        - 5000:5000
       container_name: frontend
     
+    redis:
+      image: redis:alpine
+      container_name: redis

@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+
+    simple-web-service-ubuntu:
+      image: devopsdockeruh/simple-web-service:ubuntu
+      build: .
+      volumes:
+        - /home/holaphei/koulutyot/lv-2022-2023/TKT21025-devops-with-docker/devops-with-docker/part-2/p2e1/text.log:/usr/src/app/text.log
+      container_name: sws

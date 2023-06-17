@@ -4,8 +4,10 @@ WORKDIR /usr/src/app
 
 COPY . . 
 
-ENV REQUEST_ORIGIN=http://localhost:5000
+# ENV REQUEST_ORIGIN=http://localhost
 
 RUN go build
 
-CMD ["./server", "REDIS_HOST=redis"]
+# CMD ["./server", "REDIS_HOST=redis"]
+
+CMD ["./server"]

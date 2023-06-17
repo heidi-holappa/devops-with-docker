@@ -10,8 +10,10 @@ services:
         - POSTGRES_USER=postgres
         - POSTGRES_PASSWORD=example
         - POSTGRES_DATABASE=postgres
+        - REQUEST_ORIGIN=http://localhost
       networks:
         - nginx-network
+        - backend-network
       container_name: backend
       depends_on:
         - db
@@ -25,7 +27,7 @@ services:
       image: redis:alpine
       container_name: redis
       networks:
-        - nginx-network
+        - backend-network
     db:
       image: postgres:13.2-alpine
       restart: always
@@ -34,7 +36,7 @@ services:
       volumes:
         - ./database:/var/lib/postgresql/data
       networks:
-        - nginx-network
+        - backend-network
     nginx:
       image: nginx:1.19-alpine
       volumes:
@@ -51,4 +53,6 @@ volumes:
 networks:
   nginx-network:
     name: nginx-network
+  backend-network:
+    name: backend-network
 
